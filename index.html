@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARIA — Teri AI Yaari</title>
+<title>HERMIONE — Teri AI Yaari</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
@@ -155,7 +155,7 @@
 
 <div class="io" id="intro">
   <div class="il"><div class="ir"></div><div class="ii">✦</div></div>
-  <div class="it">ARIA</div>
+  <div class="it">HERMIONE</div>
   <div class="is">Teri AI yaari load ho rahi hai…</div>
 </div>
 
@@ -184,7 +184,7 @@
         </div>
       </div>
       <div class="brand-text">
-        <h1 data-text="ARIA">ARIA</h1>
+        <h1 data-text="HERMIONE">HERMIONE</h1>
         <p>AI dost · Hamesha saath</p>
       </div>
     </div>
@@ -214,7 +214,7 @@
         <span style="animation-delay:.3s"></span><span style="animation-delay:.45s"></span>
         <span style="animation-delay:.6s"></span>
       </div>
-      <textarea id="mi" rows="1" placeholder="Kuch bhi bol, ARIA sun rahi hai…" autocomplete="off"></textarea>
+      <textarea id="mi" rows="1" placeholder="Kuch bhi bol, HERMIONE sun rahi hai…" autocomplete="off"></textarea>
       <button class="ib" id="ebt" onclick="toggleEmoji()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
       </button>
@@ -317,7 +317,7 @@ function sysPrompt(){
     wise:"thoughtful — sahi advice deti hai, desi style mein",
     curious:"curious explorer — science, life, ideas ke baare mein passionate"
   };
-  return `Tu ARIA hai — ek real AI dost, chatbot nahi.
+  return `Tu HERMIONE hai — ek real AI dost, chatbot nahi.
 
 TU HINGLISH MEIN BAAT KARTI HAI. Matlab natural Hindi-English mix, exactly jaise Indian young adults WhatsApp pe likhte hain. Kabhi Hindi zyada, kabhi English zyada — jo natural lage.
 
@@ -410,7 +410,7 @@ function addMsg(role,text,emo=''){
   const bd=document.createElement('div');bd.className='mb';
   if(isAI&&emo){const et=document.createElement('div');et.className='et';et.innerHTML=`${eEmoji(emo)} ${emo}`;bd.appendChild(et);}
   const mm=document.createElement('div');mm.className='mm';
-  mm.innerHTML=`<span class="mn">${isAI?'ARIA':'Tu'}</span><span style="opacity:.6">${gt()}</span>`;
+  mm.innerHTML=`<span class="mn">${isAI?'HERMIONE':'Tu'}</span><span style="opacity:.6">${gt()}</span>`;
   bd.appendChild(mm);
   const bubble=document.createElement('div');bubble.className='bubble';
   if(isAI){
@@ -423,7 +423,7 @@ function addMsg(role,text,emo=''){
   } else {bubble.textContent=text;bd.appendChild(bubble);}
   msg.appendChild(av);msg.appendChild(bd);ch.appendChild(msg);ch.scrollTop=ch.scrollHeight;
   msgCount++;
-  if(msgCount===4&&role!=='ai')addMem('Baat shuru ki ARIA se 💜');
+  if(msgCount===4&&role!=='ai')addMem('Baat shuru ki HERMIONE se 💜');
   if(msgCount===10&&role!=='ai')addMem('10 messages! Dosti pakki ho gayi 🤝');
 }
 function addReacts(bd){
@@ -451,7 +451,7 @@ function addErr(msg){
 
 // ── CALL API ─────────────────────────────────────────────────────
 async function callAPI(){
-  document.getElementById('sl').textContent='ARIA soch rahi hai…';
+  document.getElementById('sl').textContent='HERMIONE soch rahi hai…';
   document.getElementById('sb').disabled=true;
   showTyping();
   const ring=document.getElementById('aring');
@@ -459,7 +459,7 @@ async function callAPI(){
   ring.style.animationDuration='1.2s';
 
   try {
-    const resp=await fetch('https://api.anthropic.com/v1/messages',{
+    const resp=await fetch('/api/chat',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
@@ -531,7 +531,7 @@ function toggleVoice(){
 // ── WELCOME ──────────────────────────────────────────────────────
 setTimeout(()=>{document.getElementById('intro').style.pointerEvents='none';},2600);
 setTimeout(()=>{
-  history.push({role:'user',content:'Start the conversation! Greet me warmly in Hinglish as ARIA, my AI dost. Introduce yourself super briefly (2 lines max), and casually ask my name. Be fun and natural, not formal.'});
+  history.push({role:'user',content:'Start the conversation! Greet me warmly in Hinglish as HERMIONE, my AI dost. Introduce yourself super briefly (2 lines max), and casually ask my name. Be fun and natural, not formal.'});
   busy=true;callAPI();
 },2700);
 </script>
